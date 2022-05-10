@@ -7,19 +7,7 @@
       <div class="column">
         <div class="is-flex is-align-items-center is-justify-content-space-between">
 
-          <CronometroTracker :tempo-em-segundos="tempoEmSegundos"/>
-
-          <button class="button" @click="iniciar">
-            <span class="icon">
-              <i class="fas fa-play"></i>
-            </span>
-          </button>
-
-          <button class="button" @click="finalizar">
-            <span class="icon">
-              <i class="fas fa-stop"></i>
-            </span>
-          </button>
+          <TemporizadorTracker/>
 
         </div>
 
@@ -29,29 +17,11 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
-import CronometroTracker from "@/components/Cronometro.vue";
+import { defineComponent } from "vue";
+import TemporizadorTracker from "@/components/TemporizadorTracker.vue";
 export default defineComponent({
   name: "FormularioTracker",
-  components: {CronometroTracker},
-  data (){
-    return {
-      tempoEmSegundos:0,
-      cronometro:0
-    }
-  },
-
-  methods: {
-    iniciar () {
-      this.cronometro = setInterval(() => {
-        this.tempoEmSegundos += 1
-      },1000)
-
-    },
-    finalizar () {
-      clearInterval(this.cronometro)
-    }
-  }
+  components: {TemporizadorTracker},
 })
 </script>
 
