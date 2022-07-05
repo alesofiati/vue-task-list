@@ -5,6 +5,7 @@
     </div>
     <div class="column is-three-quarter">
       <FormularioTracker/>
+      <div class="lista"></div>
     </div>
   </main>
 </template>
